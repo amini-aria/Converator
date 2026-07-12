@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aria File Studio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="navbar">
+<div class="logo"><h1>Aria File Studio</h1></div>
+<button id="themeButton">🌙</button>
+<button id="langButton">🇮🇷 فارسی</button>
+</header>
+<section class="hero">
+<h2>تبدیل و مدیریت فایل‌ها</h2>
+<button id="selectFiles">انتخاب فایل</button>
+</section>
+<section id="dropZone" class="drop-zone">
+<input id="fileInput" type="file" hidden multiple>
+<p>فایل را اینجا رها کنید.</p>
+</section>
+<ul id="fileList"></ul>
+<div class="progress"><div id="progressBar" class="progress-bar"></div></div>
+<p id="progressText">آماده</p>
+<button id="startConvert">شروع</button>
+<script src="script.js"></script>
+</body></html>
