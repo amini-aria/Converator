@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Aria File Studio | تبدیل و مدیریت فایل</title>
+
+    <meta name="description" content="تبدیل، فشرده‌سازی و مدیریت فایل‌ها کاملاً آفلاین داخل مرورگر.">
+
+    <meta name="theme-color" content="#2563eb">
+
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="icon" href="assets/icons/favicon.ico">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+
+        <div class="logo-icon">
+            📁
+        </div>
+
+        <div class="logo-text">
+
+            <h1>Aria File Studio</h1>
+
+            <span>Offline File Converter</span>
+
+        </div>
+
+    </div>
+
+    <nav>
+
+        <a href="#tools">ابزارها</a>
+
+        <a href="#features">ویژگی‌ها</a>
+
+        <a href="#about">درباره</a>
+
+    </nav>
+
+    <div class="actions">
+
+        <button id="themeButton">
+            🌙
+        </button>
+
+        <button id="langButton">
+            🇮🇷 فارسی
+        </button>
+
+    </div>
+
+</header>
+
+<main>
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h2>
+            تبدیل و مدیریت فایل‌ها
+            <br>
+            بدون ارسال به سرور
+        </h2>
+
+        <p>
+
+            همه عملیات داخل مرورگر انجام می‌شود.
+            سریع، امن و کاملاً رایگان.
+
+        </p>
+
+        <div class="hero-buttons">
+
+            <button id="selectFiles">
+
+                انتخاب فایل
+
+            </button>
+
+            <button>
+
+                مشاهده ابزارها
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="dropZone" class="drop-zone">
+
+    <div class="drop-icon">
+
+        📂
+
+    </div>
+
+    <h3>
+
+        فایل‌ها را اینجا رها کنید
+
+    </h3>
+
+    <p>
+
+        یا روی این قسمت کلیک کنید
+
+    </p>
+
+    <input
+            type="file"
+            id="fileInput"
+            multiple
+            hidden>
+
+</section>
+
+<section id="tools" class="tools">
+
+    <h2>
+
+        ابزارها
+
+    </h2>
+
+    <div class="tool-grid">
+
+        <article class="tool-card">
+
+            <div class="tool-icon">
+                🖼
+            </div>
+
+            <h3>
+
+                ابزار تصویر
+
+            </h3>
+
+            <p>
+
+                تبدیل، تغییر اندازه، فشرده‌سازی، چرخش و واترمارک
+
+            </p>
+
+        </article>
+
+        <article class="tool-card">
+
+            <div class="tool-icon">
+                📄
+            </div>
+
+            <h3>
+
+                PDF
+
+            </h3>
+
+            <p>
+
+                PDF به تصویر، تصویر به PDF، ادغام و استخراج صفحات
+
+            </p>
+
+        </article>
+
+        <article class="tool-card">
+
+            <div class="tool-icon">
+                🗜
+
+            </div>
+
+            <h3>
+
+                ZIP
+
+            </h3>
+
+            <p>
+
+                ساخت فایل ZIP از خروجی‌ها
+
+            </p>
+
+        </article>
+
+        <article class="tool-card">
+
+            <div class="tool-icon">
+                ⚡
+
+            </div>
+
+            <h3>
+
+                Batch
+
+            </h3>
+
+            <p>
+
+                پردازش صدها فایل به‌صورت همزمان
+
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+<section class="workspace">
+
+    <aside class="sidebar">
+
+        <h3>
+
+            فایل‌های انتخاب‌شده
+
+        </h3>
+
+        <ul id="fileList">
+
+        </ul>
+
+    </aside>
+
+    <section class="editor">
+
+        <div class="panel">
+
+            <h3>
+
+                عملیات
+
+            </h3>
+
+            <select>
+
+                <option>
+
+                    انتخاب ابزار...
+
+                </option>
+
+                <option>
+
+                    JPG → PNG
+
+                </option>
+
+                <option>
+
+                    PNG → JPG
+
+                </option>
+
+                <option>
+
+                    WEBP
+
+                </option>
+
+                <option>
+
+                    Compress
+
+                </option>
+
+                <option>
+
+                    Resize
+
+                </option>
+
+                <option>
+
+                    PDF → Image
+
+                </option>
+
+                <option>
+
+                    Image → PDF
+
+                </option>
+
+            </select>
+
+            <button id="startConvert">
+
+                شروع پردازش
+
+            </button>
+
+        </div>
+
+        <div class="panel">
+
+            <h3>
+
+                وضعیت
+
+            </h3>
+
+            <div class="progress">
+
+                <div
+                        id="progressBar"
+                        class="progress-bar">
+
+                </div>
+
+            </div>
+
+            <p id="progressText">
+
+                آماده
+
+            </p>
+
+        </div>
+
+        <div class="panel">
+
+            <h3>
+
+                خروجی
+
+            </h3>
+
+            <div id="output">
+
+                هنوز فایلی تولید نشده است.
+
+            </div>
+
+        </div>
+
+    </section>
+
+</section>
+
+<section id="features" class="features">
+
+    <h2>
+
+        چرا Aria File Studio؟
+
+    </h2>
+
+    <div class="feature-grid">
+
+        <div class="feature">
+
+            🔒
+
+            <h3>
+
+                حریم خصوصی
+
+            </h3>
+
+            <p>
+
+                هیچ فایلی آپلود نمی‌شود.
+
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            ⚡
+
+            <h3>
+
+                سریع
+
+            </h3>
+
+            <p>
+
+                همه چیز داخل مرورگر انجام می‌شود.
+
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            🌙
+
+            <h3>
+
+                دارک مود
+
+            </h3>
+
+            <p>
+
+                پشتیبانی کامل از تم تاریک.
+
+            </p>
+
+        </div>
+
+        <div class="feature">
+
+            📱
+
+            <h3>
+
+                PWA
+
+            </h3>
+
+            <p>
+
+                قابل نصب روی موبایل و دسکتاپ.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<footer id="about">
+
+    <div>
+
+        <strong>
+
+            Aria File Studio
+
+        </strong>
+
+    </div>
+
+    <p>
+
+        یک پروژه متن‌باز برای تبدیل فایل‌ها به‌صورت کاملاً آفلاین.
+
+    </p>
+
+    <small>
+
+        © 2026 Aria File Studio
+
+    </small>
+
+</footer>
+
+<script src="script.js"></script>
+
+<script src="js/utils.js"></script>
+
+<script src="js/converter.js"></script>
+
+<script src="js/image-tools.js"></script>
+
+<script src="js/pdf-tools.js"></script>
+
+<script src="js/pdf-maker.js"></script>
+
+<script src="js/batch.js"></script>
+
+<script src="js/zip.js"></script>
+
+</body>
+</html>
